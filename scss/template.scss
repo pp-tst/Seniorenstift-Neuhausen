@@ -7,6 +7,7 @@
 @include foundation-forms;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600'); //Layout
 
 *,
 * ::after,
@@ -69,14 +70,42 @@ h1 {
   background: $blue;
 }
 
-.main-menu {
+#main-menu {
   list-style-type: none;
+  margin: 0;
+
+  a {
+    display: block;
+    padding: $grid-column-gutter/4 $grid-column-gutter/2;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  .sub-menu {
+    list-style-type: none;
+
+    a {
+      display: block;
+      margin: 0 $grid-column-gutter/2;
+      padding: $grid-column-gutter/10 0;
+
+      &:hover,
+      &focus {
+        background: $dark-blue;
+        color: $white;
+        padding-left: $grid-column-gutter/4;
+      }
+    }
+  }
 }
 //menu-button
 
 .menu-button {
   display: block;
   cursor: pointer;
+  background: $blue;
+  padding-bottom: $grid-column-gutter/6;
 
   &.active {
     .menu-button-inner {
@@ -102,17 +131,20 @@ h1 {
 .menu-button-box {
   width: rem-calc(50);
   height: rem-calc(50);
-  padding: rem-calc(10);
-  display: inline-block;
+  padding: $grid-column-gutter/2;
+  display: block;
   position: relative;
   vertical-align: middle;
   transition: transform 0.25s;
-  background-color: $dark-blue;
+  background-color: $blue;
 }
 
 .menu-button-label {
   color: $dark-blue;
   vertical-align: middle;
+  padding: 0 $grid-column-gutter/2;
+  font-family: 'Open Sans', sans-serif;
+  font-size: rem-calc(16);
 }
 
 .menu-button-inner {
@@ -124,9 +156,9 @@ h1 {
 
   &::after,
   &::before {
-    width: rem-calc(30);
+    width: rem-calc(40);
     height: rem-calc(5);
-    background-color: $white;
+    background-color: $dark-blue;
     border-radius: rem-calc(1);
     position: absolute;
     transition-property: transform;
@@ -203,4 +235,22 @@ h1 {
       background-color: $blue;
     }
   }
+}
+//Logo
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: $white;
+  padding: $grid-column-gutter/4;
+}
+//main
+//head-box
+
+.head-box {
+  background: $dark-blue;
+  color: $white;
 }

@@ -7,6 +7,7 @@
  * Licensed under MIT Open Source
  */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%; }
@@ -997,12 +998,31 @@ h1 {
 .main-nav {
   background: #B0D2DF; }
 
-.main-menu {
-  list-style-type: none; }
+#main-menu {
+  list-style-type: none;
+  margin: 0; }
+  #main-menu a {
+    display: block;
+    padding: 0.83333rem 1.66667rem;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; }
+  #main-menu .sub-menu {
+    list-style-type: none; }
+    #main-menu .sub-menu a {
+      display: block;
+      margin: 0 1.66667rem;
+      padding: 0.33333rem 0; }
+      #main-menu .sub-menu a:hover, #main-menu .sub-menu afocus {
+        background: #033F67;
+        color: #ffffff;
+        padding-left: 0.83333rem; }
 
 .menu-button {
   display: block;
-  cursor: pointer; }
+  cursor: pointer;
+  background: #B0D2DF;
+  padding-bottom: 0.55556rem; }
   .menu-button.active .menu-button-inner {
     -webkit-transform: rotate(225deg);
         -ms-transform: rotate(225deg);
@@ -1029,19 +1049,22 @@ h1 {
 .menu-button-box {
   width: 2.77778rem;
   height: 2.77778rem;
-  padding: 0.55556rem;
-  display: inline-block;
+  padding: 1.66667rem;
+  display: block;
   position: relative;
   vertical-align: middle;
   -webkit-transition: -webkit-transform 0.25s;
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
-  background-color: #033F67; }
+  background-color: #B0D2DF; }
 
 .menu-button-label {
   color: #033F67;
-  vertical-align: middle; }
+  vertical-align: middle;
+  padding: 0 1.66667rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.88889rem; }
 
 .menu-button-inner {
   display: block;
@@ -1052,9 +1075,9 @@ h1 {
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
   .menu-button-inner::after, .menu-button-inner::before {
-    width: 1.66667rem;
+    width: 2.22222rem;
     height: 0.27778rem;
-    background-color: #ffffff;
+    background-color: #033F67;
     border-radius: 0.05556rem;
     position: absolute;
     -webkit-transition-property: -webkit-transform;
@@ -1121,3 +1144,16 @@ h1 {
     width: 3rem; }
   .content-box li:nth-child(odd) {
     background-color: #B0D2DF; }
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: #ffffff;
+  padding: 0.83333rem; }
+
+.head-box {
+  background: #033F67;
+  color: #ffffff; }
