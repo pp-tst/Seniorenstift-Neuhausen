@@ -101,6 +101,90 @@ h1 {
 }
 //menu-button
 
+// .menu-button {
+//   display: block;
+//   cursor: pointer;
+//   background: $blue;
+//   padding-bottom: $grid-column-gutter/6;
+//
+//   &.active {
+//     .menu-button-inner {
+//       transform: rotate(225deg);
+//       transition-delay: 0.12s;
+//       transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+//
+//       &::before {
+//         top: 0;
+//         opacity: 0;
+//         transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+//       }
+//
+//       &::after {
+//         bottom: 0;
+//         transform: rotate(-90deg);
+//         transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+//       }
+//     }
+//   }
+// }
+//
+// .menu-button-box {
+  // width: rem-calc(50);
+  // height: rem-calc(50);
+  // padding: $grid-column-gutter/2;
+  // display: block;
+  // position: relative;
+  // vertical-align: middle;
+  // transition: transform 0.25s;
+  // background-color: $blue;
+// }
+//
+// .menu-button-label {
+  // color: $dark-blue;
+  // vertical-align: middle;
+  // padding: 0 $grid-column-gutter/2;
+  // font-family: 'Open Sans', sans-serif;
+  // font-size: rem-calc(16);
+// }
+//
+// .menu-button-inner {
+//   display: block;
+//   top: 100%;
+//   margin-top: rem-calc(-27);
+//   transition-duration: 0.22s;
+//   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+//
+//   &::after,
+//   &::before {
+    // width: rem-calc(40);
+    // height: rem-calc(5);
+    // background-color: $dark-blue;
+    // border-radius: rem-calc(1);
+    // position: absolute;
+    // transition-property: transform;
+    // transition-duration: 0.15s;
+    // transition-timing-function: ease;
+//   }
+//
+//   &::after,
+//   &::before {
+//     content: "";
+//     display: block;
+//   }
+//
+//   &::before {
+//     top: rem-calc(11);
+//     right: rem-calc(0);
+//     transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+//   }
+//
+//   &::after {
+//     bottom: rem-calc(11);
+//     right: rem-calc(0);
+//     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+//   }
+// }
+
 .menu-button {
   display: block;
   cursor: pointer;
@@ -154,6 +238,7 @@ h1 {
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
+  &,
   &::after,
   &::before {
     width: rem-calc(40);
@@ -168,7 +253,7 @@ h1 {
 
   &::after,
   &::before {
-    content: "";
+    content: '';
     display: block;
   }
 
@@ -184,15 +269,18 @@ h1 {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
+@include breakpoint (xxlarge) {
+  .menu-button {
+    display: none;
+  }
+}
 // Content
 .main {
   padding-top: $grid-column-gutter/2;
 }
 // Breadcrumb
 
-.breadcrumb {
-  display: none;
-}
+
 
 // Head Box
 .head-box {
@@ -249,8 +337,3 @@ h1 {
 }
 //main
 //head-box
-
-.head-box {
-  background: $dark-blue;
-  color: $white;
-}

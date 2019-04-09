@@ -1074,7 +1074,7 @@ h1 {
           transition-duration: 0.22s;
   -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
           transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-  .menu-button-inner::after, .menu-button-inner::before {
+  .menu-button-inner, .menu-button-inner::after, .menu-button-inner::before {
     width: 2.22222rem;
     height: 0.27778rem;
     background-color: #033F67;
@@ -1089,7 +1089,7 @@ h1 {
     -webkit-transition-timing-function: ease;
             transition-timing-function: ease; }
   .menu-button-inner::after, .menu-button-inner::before {
-    content: "";
+    content: '';
     display: block; }
   .menu-button-inner::before {
     top: 0.61111rem;
@@ -1104,11 +1104,12 @@ h1 {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
 
+@media screen and (min-width: 90em) {
+  .menu-button {
+    display: none; } }
+
 .main {
   padding-top: 1.66667rem; }
-
-.breadcrumb {
-  display: none; }
 
 .head-box {
   display: -webkit-box;
@@ -1153,7 +1154,3 @@ h1 {
   height: auto;
   background: #ffffff;
   padding: 0.83333rem; }
-
-.head-box {
-  background: #033F67;
-  color: #ffffff; }
