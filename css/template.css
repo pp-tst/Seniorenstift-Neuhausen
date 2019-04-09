@@ -1108,6 +1108,15 @@ h1 {
   .menu-button {
     display: none; } }
 
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: #ffffff;
+  padding: 0.83333rem; }
+
 .main {
   padding-top: 1.66667rem; }
 
@@ -1145,12 +1154,3 @@ h1 {
     width: 3rem; }
   .content-box li:nth-child(odd) {
     background-color: #B0D2DF; }
-
-.logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 220px;
-  height: auto;
-  background: #ffffff;
-  padding: 0.83333rem; }
