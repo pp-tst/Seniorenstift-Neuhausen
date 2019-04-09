@@ -7,11 +7,8 @@
 @include foundation-forms;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600'); //Layout
 
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
-
-//Layout
 *,
 * ::after,
 * ::before {
@@ -27,16 +24,15 @@
   overflow: hidden;
 }
 
-
 .peach,
 .t-peach {
   background: $peach;
 }
+//header
 //Navigation
 
 .main-nav {
   background: $blue;
-  padding-bottom: $grid-column-gutter/2;
 }
 
 #main-menu {
@@ -53,7 +49,6 @@
 
   .sub-menu {
     list-style-type: none;
-
 
     a {
       display: block;
@@ -74,6 +69,8 @@
 .menu-button {
   display: block;
   cursor: pointer;
+  background: $blue;
+  padding-bottom: $grid-column-gutter/6;
 
   &.active {
     .menu-button-inner {
@@ -94,10 +91,6 @@
       }
     }
   }
-}
-
-.active{
-  
 }
 
 .menu-button-box {
@@ -156,4 +149,15 @@
     right: rem-calc(0);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
+}
+//Logo
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: $white;
+  padding: $grid-column-gutter/4;
 }

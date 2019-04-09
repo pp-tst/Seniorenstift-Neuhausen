@@ -971,8 +971,7 @@ select {
   background: #FEA674; }
 
 .main-nav {
-  background: #B0D2DF;
-  padding-bottom: 1.66667rem; }
+  background: #B0D2DF; }
 
 #main-menu {
   list-style-type: none;
@@ -996,7 +995,9 @@ select {
 
 .menu-button {
   display: block;
-  cursor: pointer; }
+  cursor: pointer;
+  background: #B0D2DF;
+  padding-bottom: 0.55556rem; }
   .menu-button.active .menu-button-inner {
     -webkit-transform: rotate(225deg);
         -ms-transform: rotate(225deg);
@@ -1077,3 +1078,12 @@ select {
     transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: #ffffff;
+  padding: 0.83333rem; }
