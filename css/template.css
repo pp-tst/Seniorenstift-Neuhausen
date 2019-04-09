@@ -1087,3 +1087,7 @@ select {
   height: auto;
   background: #ffffff;
   padding: 0.83333rem; }
+
+.head-box {
+  background: #033F67;
+  color: #ffffff; }
