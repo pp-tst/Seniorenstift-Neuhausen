@@ -1113,8 +1113,11 @@ h1 {
   margin-left: 0; }
 
 .content-box li {
-  display: block; }
+  display: block;
+  padding: 1.11111rem; }
   .content-box li::before {
-    content: ''; }
+    content: '»';
+    padding-right: 1.11111rem;
+    width: 3rem; }
   .content-box li:nth-child(odd) {
     background-color: #B0D2DF; }

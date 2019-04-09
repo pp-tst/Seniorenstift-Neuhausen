@@ -191,9 +191,12 @@ h1 {
 
   li {
     display: block;
+    padding: $grid-column-gutter/3;
 
     &::before {
-      content: ''
+      content: '»';
+      padding-right: $grid-column-gutter/3;
+      width: rem-calc(54);
     }
 
     &:nth-child(odd) {
