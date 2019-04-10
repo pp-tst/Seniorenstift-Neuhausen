@@ -24,6 +24,7 @@
   overflow: hidden;
 }
 
+
 .section {
   margin: 0 auto;
   max-width: rem-calc(1920);
@@ -33,8 +34,8 @@
   margin: 0 auto;
   max-width: rem-calc(284);
 }
-
 // Headlines
+
 h1 {
   margin-bottom: 0;
 }
@@ -54,7 +55,6 @@ h1 {
 .t-peach {
   border-color: $peach;
 }
-
 @include breakpoint(xlarge) {
   .section {
     max-width: rem-calc(1920);
@@ -64,6 +64,7 @@ h1 {
     max-width: rem-calc(1280);
   }
 }
+//Header
 //Navigation
 
 .main-nav {
@@ -99,7 +100,6 @@ h1 {
     }
   }
 }
-//menu-button
 
 .menu-button {
   display: block;
@@ -154,6 +154,7 @@ h1 {
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
+  &,
   &::after,
   &::before {
     width: rem-calc(40);
@@ -168,7 +169,7 @@ h1 {
 
   &::after,
   &::before {
-    content: "";
+    content: '';
     display: block;
   }
 
@@ -184,17 +185,31 @@ h1 {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
+@include breakpoint (xxlarge) {
+  .menu-button {
+    display: none;
+  }
+}
+
+//Logo
+
+.logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: auto;
+  background: $white;
+  padding: $grid-column-gutter/4;
+}
 // Content
+
 .main {
   padding-top: $grid-column-gutter/2;
 }
 // Breadcrumb
-
-.breadcrumb {
-  display: none;
-}
-
 // Head Box
+
 .head-box {
   background: $dark-blue;
   color: $white;
@@ -216,8 +231,8 @@ h1 {
     order: 1;
   }
 }
-
 // Content Box
+
 .content-box {
   padding: $grid-column-gutter/4;
 
