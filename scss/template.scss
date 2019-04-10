@@ -26,7 +26,7 @@
 
 .section {
   margin: 0 auto;
-  max-width: rem-calc(320);
+  max-width: rem-calc(1920);
 }
 
 .page-wrap {
@@ -196,6 +196,8 @@ h1 {
 
 // Head Box
 .head-box {
+  background: $dark-blue;
+  color: $white;
   display: flex;
   flex-direction: column;
   padding: $grid-column-gutter/3;
@@ -217,18 +219,20 @@ h1 {
 
 // Content Box
 .content-box {
+  padding: $grid-column-gutter/4;
+
   ul {
-    margin-left: 0;
+    // margin-left: 0;
+    margin: 0 -$grid-column-gutter/4;
   }
 
   li {
     display: block;
-    padding: $grid-column-gutter/3;
+    padding: $grid-column-gutter/4;
 
     &::before {
       content: '»';
       padding-right: $grid-column-gutter/3;
-      width: rem-calc(54);
     }
 
     &:nth-child(odd) {
@@ -248,9 +252,3 @@ h1 {
   padding: $grid-column-gutter/4;
 }
 //main
-//head-box
-
-.head-box {
-  background: $dark-blue;
-  color: $white;
-}
