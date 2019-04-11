@@ -18,94 +18,41 @@
 %clearfix {
   @include clearfix();
 }
+//Layout
 
 .outer {
   max-width: 100%;
   overflow: hidden;
 }
 
-
 .section {
+  max-width: $global-width;
   margin: 0 auto;
-  max-width: rem-calc(1920);
 }
 
 .page-wrap {
+  max-width: rem-calc(1280);
   margin: 0 auto;
-  max-width: rem-calc(284);
 }
-// Headlines
-
-h1 {
-  margin-bottom: 0;
-}
-
-.light-blue {
-  background-color: $light-blue;
-}
-
-.dark-blue {
-  background-color: $dark-blue;
-}
+// Farben
 
 .peach {
   background: $peach;
 }
 
-.t-peach {
-  border-color: $peach;
-}
-@include breakpoint(xlarge) {
-  .section {
-    max-width: rem-calc(1920);
-  }
-
-  .page-wrap {
-    max-width: rem-calc(1280);
-  }
+img {
+  width: 100%;
+  height: auto;
 }
 //Header
-//Navigation
-
-.main-nav {
-  background: $blue;
-}
-
-#main-menu {
-  list-style-type: none;
-  margin: 0;
-
-  a {
-    display: block;
-    padding: $grid-column-gutter/4 $grid-column-gutter/2;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-  }
-
-  .sub-menu {
-    list-style-type: none;
-
-    a {
-      display: block;
-      margin: 0 $grid-column-gutter/2;
-      padding: $grid-column-gutter/10 0;
-
-      &:hover,
-      &focus {
-        background: $dark-blue;
-        color: $white;
-        padding-left: $grid-column-gutter/4;
-      }
-    }
-  }
-}
+// Menu Button
 
 .menu-button {
   display: block;
   cursor: pointer;
-  background: $blue;
-  padding-bottom: $grid-column-gutter/6;
+  position: absolute;
+  left: 0;
+  top: 0;
 
   &.active {
     .menu-button-inner {
@@ -131,8 +78,8 @@ h1 {
 .menu-button-box {
   width: rem-calc(50);
   height: rem-calc(50);
-  padding: $grid-column-gutter/2;
-  display: block;
+  padding: rem-calc(10);
+  display: inline-block;
   position: relative;
   vertical-align: middle;
   transition: transform 0.25s;
@@ -140,11 +87,9 @@ h1 {
 }
 
 .menu-button-label {
-  color: $dark-blue;
+  color: $black;
   vertical-align: middle;
-  padding: 0 $grid-column-gutter/2;
-  font-family: 'Open Sans', sans-serif;
-  font-size: rem-calc(16);
+  display: block;
 }
 
 .menu-button-inner {
@@ -157,9 +102,9 @@ h1 {
   &,
   &::after,
   &::before {
-    width: rem-calc(40);
+    width: rem-calc(30);
     height: rem-calc(5);
-    background-color: $dark-blue;
+    background-color: $white;
     border-radius: rem-calc(1);
     position: absolute;
     transition-property: transform;
@@ -169,7 +114,7 @@ h1 {
 
   &::after,
   &::before {
-    content: '';
+    content: "";
     display: block;
   }
 
@@ -185,85 +130,115 @@ h1 {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
-@include breakpoint (xxlarge) {
-  .menu-button {
-    display: none;
+// Hauptnavigation
+
+#main-menu {
+  list-style-type: none;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: $grid-column-gutter * 2;
+  background: $blue;
+  display: none;
+
+  a {
+    display: block;
+    color: $dark-blue;
+    padding: $grid-column-gutter/4;
+    font-size: rem-calc(21);
   }
 }
 
-//Logo
+.sub-menu {
+  list-style-type: none;
+}
+// Logo
 
 .logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 220px;
-  height: auto;
-  background: $white;
-  padding: $grid-column-gutter/4;
-}
-// Content
+  margin-left: $grid-column-gutter * 1.5;
+  display: block;
+  padding: $grid-column-gutter / 4 0;
 
-.main {
-  padding-top: $grid-column-gutter/2;
+  img {
+    width: rem-calc(250);
+    height: auto;
+  }
 }
-// Breadcrumb
-// Head Box
+// Main
+// Layout
+
+.main .section {
+  &:first-of-type {
+    background: $light-blue;
+  }
+}
+@include breakpoint(xlarge) {
+  .main .section {
+    .wp-block-columns {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+//Breadcrumb
+
+.breadcrumb {
+  display: none;
+}
+//Boxen
+
+.box {
+  padding: $grid-column-gutter / 4;
+
+  a {
+    display: block;
+    position: relative;
+  }
+
+  .symbol {
+    width: rem-calc(75);
+    height: rem-calc(75);
+    position: absolute;
+    top: $grid-column-gutter / 4;
+    right: $grid-column-gutter / 4;
+  }
+}
 
 .head-box {
   background: $dark-blue;
-  color: $white;
   display: flex;
-  flex-direction: column;
-  padding: $grid-column-gutter/3;
-  margin-bottom: $grid-column-gutter/3;
+  flex-wrap: wrap;
 
-  .h-category,
-  h1 {
-    color: $white;
-  }
-
-  h1 {
+  .h-head {
     order: 2;
+    color: $white;
   }
 
   .h-category {
     order: 1;
+    color: $white;
   }
 }
-// Content Box
 
 .content-box {
-  padding: $grid-column-gutter/4;
-
   ul {
-    // margin-left: 0;
-    margin: 0 -$grid-column-gutter/4;
+    margin: 0;
   }
 
   li {
     display: block;
-    padding: $grid-column-gutter/4;
-
-    &::before {
-      content: '»';
-      padding-right: $grid-column-gutter/3;
-    }
+    padding: $grid-column-gutter / 4;
+    margin-left: -$grid-column-gutter / 4;
+    margin-right: -$grid-column-gutter / 4;
 
     &:nth-child(odd) {
-      background-color: $blue;
+      background: $blue;
+    }
+
+    &:before {
+      content: '»';
+      margin-right: rem-calc(10);
     }
   }
 }
-//Logo
-
-.logo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 220px;
-  height: auto;
-  background: $white;
-  padding: $grid-column-gutter/4;
-}
-//main
