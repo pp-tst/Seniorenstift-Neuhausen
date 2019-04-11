@@ -242,3 +242,22 @@ img {
     }
   }
 }
+//columns
+.main{
+  .wp-block-columns{
+    margin-top: $grid-column-gutter/2;
+    .wp-block-column{
+      &:nth-of-type(1){
+        width: 60%;
+        background: $white;
+
+      }
+      &:nth-of-type(2){
+        width: 40%;
+      }
+    }
+    .teaser-box{
+      background: $white;
+    }
+  }
+}
