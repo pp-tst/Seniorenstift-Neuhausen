@@ -250,6 +250,7 @@ img {
     }
   }
 }
+
 // Boxen large
 @include breakpoint(large) {
   .box {
@@ -330,6 +331,31 @@ img {
 
       .wp-block-column {
         flex-wrap: wrap;
+      }
+    }
+  }
+}
+//columns
+@include breakpoint(xlarge) {
+  .main {
+    .wp-block-columns {
+      margin-top: $grid-column-gutter/2;
+
+      .wp-block-column {
+        &:nth-of-type(1) {
+          background: $white;
+        }
+
+        &:nth-of-type(2) {}
+      }
+
+      .teaser-box {
+        background: $white;
+        padding: 0;
+      }
+
+      .info-box {
+        background: $green;
       }
     }
   }

@@ -1212,3 +1212,14 @@ img {
       .footer .wp-block-columns .wp-block-column {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; } }
+
+@media screen and (min-width: 64em) {
+  .main .wp-block-columns {
+    margin-top: 1.66667rem; }
+    .main .wp-block-columns .wp-block-column:nth-of-type(1) {
+      background: #ffffff; }
+    .main .wp-block-columns .teaser-box {
+      background: #ffffff;
+      padding: 0; }
+    .main .wp-block-columns .info-box {
+      background: #C4D35D; } }
