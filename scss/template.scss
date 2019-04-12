@@ -34,11 +34,18 @@
   max-width: rem-calc(1280);
   margin: 0 auto;
 }
+
+@include breakpoint(xlarge) {
+  body {
+    font-size: $global-font-size * 1.25;
+  }
+}
 // Farben
 
 .peach {
   background: $peach;
 }
+// Bilder
 
 img {
   width: 100%;
@@ -208,6 +215,7 @@ img {
 .head-box {
   background: $dark-blue;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 
   .h-head {
@@ -239,6 +247,90 @@ img {
     &:before {
       content: '»';
       margin-right: rem-calc(10);
+    }
+  }
+}
+// Boxen large
+@include breakpoint(large) {
+  .box {
+    padding: $grid-column-gutter / 2;
+  }
+}
+// Blockquote
+
+#quote {
+  border-left: none;
+  margin-top: $grid-column-gutter * .75;
+
+  p {
+    color: $dark-blue;
+    font-style: italic;
+    font-weight: bold;
+
+    cite {
+      font-style: normal;
+      margin-top: $grid-column-gutter / 4;
+    }
+  }
+}
+// Blockquote large
+@include breakpoint(large) {
+  #quote {
+    padding: $grid-column-gutter / 2;
+  }
+}
+// Footer
+
+.footer {
+  background: $blue;
+  margin-top: $grid-column-gutter;
+  padding: $grid-column-gutter / 2 $grid-column-gutter / 4;
+
+  .wp-block-columns {
+    .wp-block-column {
+      margin-bottom: $grid-column-gutter;
+    }
+  }
+
+  #footer-main-menu,
+  #footer-service-menu {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  a {
+    display: block;
+    padding: $grid-column-gutter / 8;
+
+    &:focus,
+    &:hover {
+      background: $dark-blue;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  p a {
+    margin-left: -$grid-column-gutter / 8;
+  }
+
+  .copyright {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+@include breakpoint(large) {
+  .footer {
+    padding: $grid-column-gutter / 2;
+
+    .wp-block-columns {
+      display: flex;
+      justify-content: space-between;
+
+      .wp-block-column {
+        flex-wrap: wrap;
+      }
     }
   }
 }
