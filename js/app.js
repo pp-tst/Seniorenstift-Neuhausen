@@ -63,6 +63,11 @@ $('.toggle').each(function() {
   });
 });
 
+// Bei Eltern das Icon ändern
+function count_parents() {
+  return $('.current').parents('.active').length;
+}
+
 
 // Untermenü
 $('.sub').children('a').click(function(e) {
