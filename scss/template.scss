@@ -34,7 +34,6 @@
   max-width: rem-calc(1280);
   margin: 0 auto;
 }
-
 @include breakpoint(xlarge) {
   body {
     font-size: $global-font-size * 1.25;
@@ -250,7 +249,6 @@ img {
     }
   }
 }
-
 // Boxen large
 @include breakpoint(large) {
   .box {
@@ -336,20 +334,26 @@ img {
   }
 }
 //columns
-@include breakpoint(xlarge) {
+@include breakpoint(large) {
   .main {
     .wp-block-columns {
       margin-top: $grid-column-gutter/2;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
 
       .wp-block-column {
         &:nth-of-type(1) {
           background: $white;
           width: 70%;
+          padding-top: $grid-column-gutter;
 
+          h2 {
+            color: $peach;
+          }
 
+          p {
+            font-size: rem-calc(22);
+          }
         }
 
         &:nth-of-type(2) {
@@ -359,11 +363,40 @@ img {
 
       .teaser-box {
         background: $white;
-        padding: 0;
+        padding: $grid-column-gutter / 2 0 0 0;
+        border-bottom: 10px solid $peach;
+        margin-bottom: $grid-column-gutter/2;
+
+        a {
+          text-decoration: none;
+        }
+
+        h3 {
+          color: $dark-blue;
+          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 2;
+        }
+
+        p {
+          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 4;
+        }
       }
 
       .info-box {
         background: $green;
+        padding: $grid-column-gutter / 2 0 0 0;
+
+        a {
+          text-decoration: none;
+        }
+
+        h3 {
+          color: $dark-blue;
+          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 2;
+        }
+
+        p {
+          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 4;
+        }
       }
     }
   }
