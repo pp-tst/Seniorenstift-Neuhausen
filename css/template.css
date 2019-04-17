@@ -7,7 +7,6 @@
  * Licensed under MIT Open Source
  */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%; }
@@ -972,25 +971,28 @@ select {
 
 .page-wrap {
   max-width: 71.11111rem;
-  margin: 0 auto; }
-
-@media screen and (min-width: 64em) {
-  body {
-    font-size: 140.625%; } }
+  margin: 0 auto;
+  padding: 0.83333rem; }
 
 .peach {
   background: #FEA674; }
 
+.white {
+  background: #ffffff; }
+
 img {
-  height: auto;
-  width: 100%; }
+  width: 100%;
+  height: auto; }
+
+p, ul, ol {
+  font-size: 1.16667rem; }
+
+@media screen and (min-width: 64em) {
+  p, ul, ol {
+    font-size: 1.44444rem; } }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  position: relative; }
 
 .menu-button {
   cursor: pointer;
@@ -1075,19 +1077,20 @@ img {
   display: block;
   margin-top: -0.88889rem; }
 
+.main-nav {
+  position: absolute;
+  right: 0;
+  left: 0; }
+
 #main-menu {
   background: #B0D2DF;
-  display: none;
-  left: 0;
   list-style-type: none;
   margin: 0;
-  padding: 1.66667rem 0;
-  position: absolute;
-  right: 0; }
+  padding: 1.66667rem 0; }
   #main-menu a {
     color: #033F67;
     display: block;
-    font-size: 1rem;
+    font-size: 1.16667rem;
     padding: 0.55556rem 1.66667rem; }
     #main-menu a:focus, #main-menu a:hover {
       background: #033F67;
@@ -1097,77 +1100,91 @@ img {
 .sub-menu {
   list-style-type: none;
   margin-bottom: 0.83333rem; }
-  .sub-menu a {
-    font-size: 1.16667rem; }
 
 @media screen and (min-width: 90em) {
   .menu-button {
     display: none; }
   #main-menu {
     display: block !important;
-    max-width: 22.22222rem; }
-    #main-menu a {
-      font-size: 1.16667rem; } }
+    max-width: 33.33333rem; } }
 
 .logo {
-  position: absolute;
-  right: 0.83333rem;
-  top: 0.83333rem; }
+  margin-left: 6.66667rem;
+  display: block;
+  padding: 0.55556rem 0; }
   .logo img {
-    width: 11.11111rem;
+    width: 12.5rem;
     height: auto; }
 
-@media print, screen and (min-width: 48em) {
+@media screen and (min-width: 90em) {
   .logo {
-    right: 1.66667rem; }
+    margin-left: 35rem;
+    padding: 1.66667rem 0; }
     .logo img {
-      width: 20rem; } }
-
-.hero {
-  margin-top: 8.33333rem; }
+      width: 19.44444rem;
+      height: auto; } }
 
 .main .section:first-of-type {
   background: #E1ECF1; }
 
-@media screen and (min-width: 64em) {
-  .main .section .wp-block-columns {
+@media print, screen and (min-width: 48em) {
+  .wp-block-columns {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap; } }
+        flex-wrap: wrap; }
+  .main .section .wp-block-columns {
+    margin-left: -0.41667rem;
+    margin-right: -0.41667rem; }
+  .main .section .wp-block-column {
+    padding: 0 0.41667rem; }
+    .main .section .wp-block-column:nth-child(1) {
+      width: 70%; }
+    .main .section .wp-block-column:nth-child(2) {
+      width: 30%; } }
 
 .breadcrumb {
   display: none; }
 
-@media screen and (min-width: 90em) {
+@media screen and (min-width: 64em) {
   .breadcrumb {
     display: block;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 1.66667rem 0; }
-    .breadcrumb #breadcrumb-menu {
-      display: inline; }
-    .breadcrumb li {
+    padding: 0.83333rem 0 1.66667rem 0; }
+  #breadcrumb-menu {
+    display: inline;
+    font-size: 1rem; }
+    #breadcrumb-menu li {
       display: inline;
       padding-right: 0.41667rem; }
-      .breadcrumb li::after {
-        content: '»';
-        padding-left: 0.41667rem; }
-      .breadcrumb li:last-child::after {
-        display: none; } }
+    #breadcrumb-menu li::after {
+      content: '»';
+      padding-left: 0.41667rem; }
+    #breadcrumb-menu li:last-child::after {
+      display: none; } }
 
 .box {
-  padding: 0.83333rem; }
+  padding: 0.83333rem;
+  margin-bottom: 0.83333rem; }
   .box a {
     display: block;
     position: relative; }
+  .box .link {
+    margin: -0.83333rem; }
+  .box .text {
+    padding: 1.48148rem 0.83333rem 3.33333rem 0.83333rem; }
+    .box .text h3 {
+      margin-bottom: 3.33333rem; }
   .box .symbol {
-    width: 4.16667rem;
-    height: 4.16667rem;
+    width: 3.33333rem;
+    height: 3.33333rem;
     position: absolute;
     top: 0.83333rem;
     right: 0.83333rem; }
+
+@media screen and (min-width: 64em) {
+  .box {
+    padding: 3.33333rem; } }
 
 .head-box {
   background: #033F67;
@@ -1176,10 +1193,8 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      -ms-flex-flow: column;
+          flex-flow: column; }
   .head-box .h-head {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -1205,99 +1220,43 @@ img {
     content: '»';
     margin-right: 0.55556rem; }
 
-@media print, screen and (min-width: 48em) {
-  .box {
-    padding: 1.66667rem; } }
+.info-box {
+  background: #C4D35D; }
+
+.teaser-box {
+  background: #ffffff;
+  border-bottom: 10px solid; }
+  .teaser-box.peach {
+    border-color: #FEA674; }
 
 #quote {
-  border-left: none;
-  margin-top: 2.5rem; }
+  border: none;
+  padding: 3.33333rem 0.83333rem; }
   #quote p {
     color: #033F67;
-    font-style: italic;
-    font-weight: bold; }
-    #quote p cite {
-      font-style: normal;
-      margin-top: 0.83333rem; }
-
-@media print, screen and (min-width: 48em) {
-  #quote {
-    padding: 1.66667rem; } }
+    margin: 0; }
+  #quote cite {
+    margin-top: 0.83333rem; }
+    #quote cite:before {
+      display: none; }
 
 .footer {
   background: #B0D2DF;
-  margin-top: 3.33333rem;
   padding: 1.66667rem 0.83333rem; }
-  .footer .wp-block-columns .wp-block-column {
-    margin-bottom: 3.33333rem; }
   .footer #footer-main-menu,
   .footer #footer-service-menu {
     list-style: none;
     margin-left: 0; }
   .footer a {
-    display: block;
-    padding: 0.41667rem; }
+    display: block; }
     .footer a:focus, .footer a:hover {
-      background: #033F67;
       color: #ffffff;
       text-decoration: none; }
-  .footer p a {
-    margin-left: -0.41667rem; }
-  .footer .copyright p {
-    margin-bottom: 0; }
 
 @media print, screen and (min-width: 48em) {
   .footer {
     padding: 1.66667rem; }
     .footer .wp-block-columns {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
-              justify-content: space-between; }
-      .footer .wp-block-columns .wp-block-column {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap; } }
-
-@media print, screen and (min-width: 48em) {
-  .main .wp-block-columns {
-    margin-top: 1.66667rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-    .main .wp-block-columns .wp-block-column:nth-of-type(1) {
-      background: #ffffff;
-      width: 70%;
-      padding-top: 3.33333rem; }
-      .main .wp-block-columns .wp-block-column:nth-of-type(1) h2 {
-        color: #FEA674; }
-    .main .wp-block-columns .wp-block-column:nth-of-type(2) {
-      width: 30%; }
-    .main .wp-block-columns .teaser-box {
-      background: #ffffff;
-      padding: 1.66667rem 0 0 0;
-      border-bottom: 10px solid #FEA674;
-      margin-bottom: 1.66667rem; }
-      .main .wp-block-columns .teaser-box a {
-        text-decoration: none; }
-      .main .wp-block-columns .teaser-box h3 {
-        color: #033F67;
-        padding: 0 1.66667rem 1.66667rem; }
-      .main .wp-block-columns .teaser-box p {
-        padding: 0 1.66667rem 0.83333rem; }
-    .main .wp-block-columns .info-box {
-      background: #C4D35D;
-      padding: 1.66667rem 0 0 0; }
-      .main .wp-block-columns .info-box a {
-        text-decoration: none; }
-      .main .wp-block-columns .info-box h3 {
-        color: #033F67;
-        padding: 0 1.66667rem 1.66667rem; }
-      .main .wp-block-columns .info-box p {
-        padding: 0 1.66667rem 0.83333rem; }
-      .main .wp-block-columns .info-box svg {
-        position: static; } }
+              justify-content: space-between; } }
