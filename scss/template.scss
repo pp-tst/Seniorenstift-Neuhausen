@@ -7,7 +7,6 @@
 @include foundation-forms;
 @include foundation-visibility-classes;
 @include foundation-float-classes;
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600'); //Layout
 
 *,
 * ::after,
@@ -33,28 +32,36 @@
 .page-wrap {
   max-width: rem-calc(1280);
   margin: 0 auto;
-}
-@include breakpoint(xlarge) {
-  body {
-    font-size: $global-font-size * 1.25;
-  }
+  padding: $grid-column-gutter / 4;
 }
 // Farben
 
 .peach {
   background: $peach;
 }
-// Bilder
+
+.white {
+  background: $white;
+}
 
 img {
-  height: auto;
   width: 100%;
+  height: auto;
 }
-//Header
 
+p, ul, ol {
+  font-size: rem-calc(21);
+}
+
+@include breakpoint(xlarge) {
+  p, ul, ol {
+    font-size: rem-calc(26);
+  }
+}
+
+// Header
 .header {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
 }
 // Menu
 // Menu Button
@@ -141,20 +148,23 @@ img {
   margin-top: -$grid-column-gutter / 3.75;
 }
 // Hauptnavigation
+
+.main-nav {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
 #main-menu {
   background: $blue;
-  display: none;
-  left: 0;
   list-style-type: none;
   margin: 0;
   padding: $grid-column-gutter / 2 0;
-  position: absolute;
-  right: 0;
 
   a {
     color: $dark-blue;
     display: block;
-    font-size: rem-calc(18);
+    font-size: rem-calc(21);
     padding: $grid-column-gutter / 6 $grid-column-gutter / 2;
 
     &:focus,
@@ -169,13 +179,7 @@ img {
 .sub-menu {
   list-style-type: none;
   margin-bottom: $grid-column-gutter / 4;
-
-  a {
-    font-size: rem-calc(21);
-  }
 }
-
-// Menu XLarge
 @include breakpoint(xxlarge) {
   .menu-button {
     display: none;
@@ -183,40 +187,33 @@ img {
 
   #main-menu {
     display: block !important;
-    max-width: rem-calc(400);
+    max-width: rem-calc(600);
 
-    a {
-      font-size: rem-calc(21);
-    }
   }
 }
 // Logo
 
 .logo {
-  position: absolute;
-  right: $grid-column-gutter / 4;
-  top: $grid-column-gutter / 4;
+  margin-left: $grid-column-gutter * 2;
+  display: block;
+  padding: $grid-column-gutter / 6 0;
 
   img {
-    width: rem-calc(200);
+    width: rem-calc(225);
     height: auto;
   }
 }
 
-// Logo Large
-@include breakpoint(large) {
+@include breakpoint(xxlarge) {
   .logo {
-    right: $grid-column-gutter / 2;
+    margin-left: $grid-column-gutter * 10.5;
+    padding: $grid-column-gutter / 2 0;
 
     img {
-      width: rem-calc(360);
+      width: rem-calc(350);
+      height: auto;
     }
   }
-}
-
-// Hero XXLarge
-.hero {
-  margin-top: $grid-column-gutter * 2.5;
 }
 // Main
 // Layout
@@ -226,12 +223,28 @@ img {
     background: $light-blue;
   }
 }
+@include breakpoint(large) {
+  .wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-@include breakpoint(xlarge) {
   .main .section {
     .wp-block-columns {
-      display: flex;
-      flex-wrap: wrap;
+      margin-left: -$grid-column-gutter / 8;
+      margin-right: -$grid-column-gutter / 8;
+    }
+
+    .wp-block-column {
+      padding: 0 $grid-column-gutter / 8;
+
+      &:nth-child(1) {
+        width: 70%;
+      }
+
+      &:nth-child(2) {
+        width: 30%;
+      }
     }
   }
 }
@@ -240,31 +253,28 @@ img {
 .breadcrumb {
   display: none;
 }
-
-// Breadcrumb xxLarge
-@include breakpoint(xxlarge) {
+@include breakpoint(xlarge) {
   .breadcrumb {
     display: block;
-    font-size: rem-calc(18);
-    font-weight: bold;
-    padding: $grid-column-gutter / 2 0;
+    padding: $grid-column-gutter / 4 0 $grid-column-gutter / 2 0;
+  }
 
-    #breadcrumb-menu {
-      display: inline;
-    }
+  #breadcrumb-menu {
+    display: inline;
+    font-size: rem-calc(18);
 
     li {
       display: inline;
       padding-right: $grid-column-gutter / 8;
+    }
 
-      &::after {
-        content: '»';
-        padding-left: $grid-column-gutter / 8;
-      }
+    li::after {
+      content: '»';
+      padding-left: $grid-column-gutter / 8;
+    }
 
-      &:last-child::after {
-        display: none;
-      }
+    li:last-child::after {
+      display: none;
     }
   }
 }
@@ -272,26 +282,45 @@ img {
 
 .box {
   padding: $grid-column-gutter / 4;
+  margin-bottom: $grid-column-gutter / 4;
 
   a {
     display: block;
     position: relative;
   }
 
+  .link {
+    margin: 0 -$grid-column-gutter / 4;
+  }
+
+  .text {
+    padding: $grid-column-gutter / 2.25 $grid-column-gutter / 4 $grid-column-gutter $grid-column-gutter / 4;
+
+    h3 {
+      margin-bottom: $grid-column-gutter;
+    }
+  }
+
   .symbol {
-    width: rem-calc(75);
-    height: rem-calc(75);
+    width: rem-calc(60);
+    height: rem-calc(60);
     position: absolute;
     top: $grid-column-gutter / 4;
     right: $grid-column-gutter / 4;
   }
 }
 
+@include breakpoint(xlarge) {
+  .box {
+    padding: $grid-column-gutter;
+  }
+}
+// Head Box
+
 .head-box {
   background: $dark-blue;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column;
 
   .h-head {
     order: 2;
@@ -303,6 +332,7 @@ img {
     color: $white;
   }
 }
+// Inhalt Box
 
 .content-box {
   ul {
@@ -325,47 +355,45 @@ img {
     }
   }
 }
-// Boxen large
-@include breakpoint(large) {
-  .box {
-    padding: $grid-column-gutter / 2;
+// Info Box
+
+.info-box {
+  background: $green;
+}
+// Teaser Boxen
+
+.teaser-box {
+  background: $white;
+  border-bottom: 10px solid;
+
+  &.peach {
+    border-color: $peach;
   }
 }
-// Blockquote
+// Zitat
 
 #quote {
-  border-left: none;
-  margin-top: $grid-column-gutter * .75;
+  border: none;
+  padding: $grid-column-gutter $grid-column-gutter/4;
 
   p {
     color: $dark-blue;
-    font-style: italic;
-    font-weight: bold;
-
-    cite {
-      font-style: normal;
-      margin-top: $grid-column-gutter / 4;
-    }
+    margin: 0;
   }
-}
-// Blockquote large
-@include breakpoint(large) {
-  #quote {
-    padding: $grid-column-gutter / 2;
+
+  cite {
+    margin-top: $grid-column-gutter / 4;
+
+    &:before {
+      display: none;
+    }
   }
 }
 // Footer
 
 .footer {
   background: $blue;
-  margin-top: $grid-column-gutter;
   padding: $grid-column-gutter / 2 $grid-column-gutter / 4;
-
-  .wp-block-columns {
-    .wp-block-column {
-      margin-bottom: $grid-column-gutter;
-    }
-  }
 
   #footer-main-menu,
   #footer-service-menu {
@@ -375,23 +403,11 @@ img {
 
   a {
     display: block;
-    padding: $grid-column-gutter / 8;
 
     &:focus,
     &:hover {
-      background: $dark-blue;
       color: $white;
       text-decoration: none;
-    }
-  }
-
-  p a {
-    margin-left: -$grid-column-gutter / 8;
-  }
-
-  .copyright {
-    p {
-      margin-bottom: 0;
     }
   }
 }
@@ -400,65 +416,7 @@ img {
     padding: $grid-column-gutter / 2;
 
     .wp-block-columns {
-      display: flex;
       justify-content: space-between;
-
-      .wp-block-column {
-        flex-wrap: wrap;
-      }
-    }
-  }
-}
-//columns
-@include breakpoint(xlarge) {
-  .main {
-    .wp-block-columns {
-      margin-top: $grid-column-gutter/2;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-      .wp-block-column {
-        &:nth-of-type(1) {
-          background: $white;
-          width: 70%;
-          padding-top: $grid-column-gutter;
-
-          h2 {
-            color: $peach;
-          }
-        }
-
-        &:nth-of-type(2) {
-          width: 30%;
-        }
-      }
-
-      .teaser-box {
-        background: $white;
-        padding: 0;
-      }
-
-      .info-box {
-        background: $green;
-        padding: $grid-column-gutter / 2 0 0 0;
-
-        a {
-          text-decoration: none;
-        }
-
-        h3 {
-          color: $dark-blue;
-          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 2;
-        }
-
-        p {
-          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 4;
-        }
-        svg{
-          position: static;
-        }
-      }
     }
   }
 }
