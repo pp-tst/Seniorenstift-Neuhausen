@@ -353,7 +353,7 @@ h6, .h6 {
   h2, .h2 {
     font-size: 2.77778rem; }
   h3, .h3 {
-    font-size: 2.22222rem; }
+    font-size: 1.66667rem; }
   h4, .h4 {
     font-size: 1.5rem; }
   h5, .h5 {
@@ -1228,8 +1228,6 @@ img {
       padding-top: 3.33333rem; }
       .main .wp-block-columns .wp-block-column:nth-of-type(1) h2 {
         color: #FEA674; }
-      .main .wp-block-columns .wp-block-column:nth-of-type(1) p {
-        font-size: 1.22222rem; }
     .main .wp-block-columns .wp-block-column:nth-of-type(2) {
       width: 30%; }
     .main .wp-block-columns .teaser-box {
@@ -1253,4 +1251,6 @@ img {
         color: #033F67;
         padding: 0 1.66667rem 1.66667rem; }
       .main .wp-block-columns .info-box p {
-        padding: 0 1.66667rem 0.83333rem; } }
+        padding: 0 1.66667rem 0.83333rem; }
+      .main .wp-block-columns .info-box svg {
+        position: static; } }

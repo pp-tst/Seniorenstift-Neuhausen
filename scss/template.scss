@@ -350,10 +350,6 @@ img {
           h2 {
             color: $peach;
           }
-
-          p {
-            font-size: rem-calc(22);
-          }
         }
 
         &:nth-of-type(2) {
@@ -396,6 +392,9 @@ img {
 
         p {
           padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 4;
+        }
+        svg{
+          position: static;
         }
       }
     }
