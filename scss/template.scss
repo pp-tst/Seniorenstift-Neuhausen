@@ -47,18 +47,24 @@
 // Bilder
 
 img {
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 //Header
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+}
+// Menu
 // Menu Button
 
 .menu-button {
-  display: block;
   cursor: pointer;
-  position: absolute;
-  left: 0;
-  top: 0;
+  background: $blue;
+  height: $grid-column-gutter*1.5;
+  margin-right: $grid-column-gutter / 4;
+  width: $grid-column-gutter*1.5;
 
   &.active {
     .menu-button-inner {
@@ -67,8 +73,8 @@ img {
       transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
       &::before {
-        top: 0;
         opacity: 0;
+        top: 0;
         transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
       }
 
@@ -82,40 +88,32 @@ img {
 }
 
 .menu-button-box {
-  width: rem-calc(50);
-  height: rem-calc(50);
-  padding: rem-calc(10);
   display: inline-block;
+  height: rem-calc(65);
+  padding: rem-calc(16);
   position: relative;
-  vertical-align: middle;
   transition: transform 0.25s;
-  background-color: $blue;
-}
-
-.menu-button-label {
-  color: $black;
-  vertical-align: middle;
-  display: block;
+  width: rem-calc(75);
 }
 
 .menu-button-inner {
   display: block;
+  margin-top: rem-calc(-40);
   top: 100%;
-  margin-top: rem-calc(-27);
   transition-duration: 0.22s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
   &,
   &::after,
   &::before {
-    width: rem-calc(30);
+    background-color: $dark-blue;
+    border-radius: rem-calc(2);
     height: rem-calc(5);
-    background-color: $white;
-    border-radius: rem-calc(1);
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
     transition-timing-function: ease;
+    width: rem-calc(40);
   }
 
   &::after,
@@ -136,40 +134,89 @@ img {
     transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 }
-// Hauptnavigation
 
+.menu-button-label {
+  color: $dark-blue;
+  display: block;
+  margin-top: -$grid-column-gutter / 3.75;
+}
+// Hauptnavigation
 #main-menu {
-  list-style-type: none;
-  margin: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: $grid-column-gutter * 2;
   background: $blue;
   display: none;
+  left: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: $grid-column-gutter / 2 0;
+  position: absolute;
+  right: 0;
 
   a {
-    display: block;
     color: $dark-blue;
-    padding: $grid-column-gutter/4;
-    font-size: rem-calc(21);
+    display: block;
+    font-size: rem-calc(18);
+    padding: $grid-column-gutter / 6 $grid-column-gutter / 2;
+
+    &:focus,
+    &:hover {
+      background: $dark-blue;
+      color: $white;
+      text-decoration: none;
+    }
   }
 }
 
 .sub-menu {
   list-style-type: none;
+  margin-bottom: $grid-column-gutter / 4;
+
+  a {
+    font-size: rem-calc(21);
+  }
+}
+
+// Menu XLarge
+@include breakpoint(xxlarge) {
+  .menu-button {
+    display: none;
+  }
+
+  #main-menu {
+    display: block !important;
+    max-width: rem-calc(400);
+
+    a {
+      font-size: rem-calc(21);
+    }
+  }
 }
 // Logo
 
 .logo {
-  margin-left: $grid-column-gutter * 1.5;
-  display: block;
-  padding: $grid-column-gutter / 4 0;
+  position: absolute;
+  right: $grid-column-gutter / 4;
+  top: $grid-column-gutter / 4;
 
   img {
-    width: rem-calc(250);
+    width: rem-calc(200);
     height: auto;
   }
+}
+
+// Logo Large
+@include breakpoint(large) {
+  .logo {
+    right: $grid-column-gutter / 2;
+
+    img {
+      width: rem-calc(360);
+    }
+  }
+}
+
+// Hero XXLarge
+.hero {
+  margin-top: $grid-column-gutter * 2.5;
 }
 // Main
 // Layout
@@ -179,6 +226,7 @@ img {
     background: $light-blue;
   }
 }
+
 @include breakpoint(xlarge) {
   .main .section {
     .wp-block-columns {
@@ -191,6 +239,34 @@ img {
 
 .breadcrumb {
   display: none;
+}
+
+// Breadcrumb xxLarge
+@include breakpoint(xxlarge) {
+  .breadcrumb {
+    display: block;
+    font-size: rem-calc(18);
+    font-weight: bold;
+    padding: $grid-column-gutter / 2 0;
+
+    #breadcrumb-menu {
+      display: inline;
+    }
+
+    li {
+      display: inline;
+      padding-right: $grid-column-gutter / 8;
+
+      &::after {
+        content: '»';
+        padding-left: $grid-column-gutter / 8;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
 }
 //Boxen
 
@@ -334,11 +410,12 @@ img {
   }
 }
 //columns
-@include breakpoint(large) {
+@include breakpoint(xlarge) {
   .main {
     .wp-block-columns {
       margin-top: $grid-column-gutter/2;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
 
       .wp-block-column {
@@ -359,22 +436,7 @@ img {
 
       .teaser-box {
         background: $white;
-        padding: $grid-column-gutter / 2 0 0 0;
-        border-bottom: 10px solid $peach;
-        margin-bottom: $grid-column-gutter/2;
-
-        a {
-          text-decoration: none;
-        }
-
-        h3 {
-          color: $dark-blue;
-          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 2;
-        }
-
-        p {
-          padding: 0 $grid-column-gutter / 2 $grid-column-gutter / 4;
-        }
+        padding: 0;
       }
 
       .info-box {
