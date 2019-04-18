@@ -49,17 +49,20 @@ img {
   height: auto;
 }
 
-p, ul, ol {
+ol,
+p,
+ul {
   font-size: rem-calc(21);
 }
-
 @include breakpoint(xlarge) {
-  p, ul, ol {
+  ol,
+  p,
+  ul {
     font-size: rem-calc(26);
   }
 }
-
 // Header
+
 .header {
   position: relative;
 }
@@ -188,7 +191,6 @@ p, ul, ol {
   #main-menu {
     display: block !important;
     max-width: rem-calc(600);
-
   }
 }
 // Logo
@@ -203,7 +205,6 @@ p, ul, ol {
     height: auto;
   }
 }
-
 @include breakpoint(xxlarge) {
   .logo {
     margin-left: $grid-column-gutter * 10.5;
@@ -309,7 +310,6 @@ p, ul, ol {
     right: $grid-column-gutter / 4;
   }
 }
-
 @include breakpoint(xlarge) {
   .box {
     padding: $grid-column-gutter;
@@ -395,10 +395,14 @@ p, ul, ol {
   background: $blue;
   padding: $grid-column-gutter / 2 $grid-column-gutter / 4;
 
+  p {
+    margin: 0;
+  }
+
   #footer-main-menu,
   #footer-service-menu {
     list-style: none;
-    margin-left: 0;
+    margin: $grid-column-gutter/2 0;
   }
 
   a {
@@ -408,6 +412,18 @@ p, ul, ol {
     &:hover {
       color: $white;
       text-decoration: none;
+    }
+  }
+
+  .copyright {
+    padding: 0 $grid-column-gutter/4;
+  }
+}
+@include breakpoint(large) {
+  .footer {
+    #footer-main-menu,
+    #footer-service-menu {
+      margin: 0;
     }
   }
 }

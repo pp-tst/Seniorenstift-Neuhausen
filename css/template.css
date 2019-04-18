@@ -984,11 +984,15 @@ img {
   width: 100%;
   height: auto; }
 
-p, ul, ol {
+ol,
+p,
+ul {
   font-size: 1.16667rem; }
 
 @media screen and (min-width: 64em) {
-  p, ul, ol {
+  ol,
+  p,
+  ul {
     font-size: 1.44444rem; } }
 
 .header {
@@ -1243,15 +1247,24 @@ p, ul, ol {
 .footer {
   background: #B0D2DF;
   padding: 1.66667rem 0.83333rem; }
+  .footer p {
+    margin: 0; }
   .footer #footer-main-menu,
   .footer #footer-service-menu {
     list-style: none;
-    margin-left: 0; }
+    margin: 1.66667rem 0; }
   .footer a {
     display: block; }
     .footer a:focus, .footer a:hover {
       color: #ffffff;
       text-decoration: none; }
+  .footer .copyright {
+    padding: 0 0.83333rem; }
+
+@media print, screen and (min-width: 48em) {
+  .footer #footer-main-menu,
+  .footer #footer-service-menu {
+    margin: 0; } }
 
 @media print, screen and (min-width: 48em) {
   .footer {
